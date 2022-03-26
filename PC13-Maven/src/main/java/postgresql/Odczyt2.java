@@ -7,7 +7,7 @@ import java.sql.*;
 public class Odczyt2 {
     public static void main(String[] args) {
         try(Connection c = DriverManager.getConnection("jdbc:postgresql://localhost/hr", "kurs", "abc123")) {
-            try (PreparedStatement stmt = c.prepareStatement("SELECT * FROM employees")) {
+            try (PreparedStatement stmt = c.prepareStatement("SELECT * FROM employees ORDER BY employee_id")) {
                 try (ResultSet rs = stmt.executeQuery()) {
                     while (rs.next()) {
                         // pola z wynikowych rekordów można też odczytywać podając nazwy kolumn
