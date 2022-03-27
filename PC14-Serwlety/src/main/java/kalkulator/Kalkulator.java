@@ -2,7 +2,6 @@ package kalkulator;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDateTime;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +18,7 @@ public class Kalkulator extends HttpServlet {
 		// W przypadku braku parametru wynikime jest null.
 		String parametr1 = request.getParameter("liczba1");
 		String parametr2 = request.getParameter("liczba2");
+		String operacja = request.getParameter("operacja");
 		
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
@@ -37,16 +37,30 @@ public class Kalkulator extends HttpServlet {
 		out.println("<td><label for='liczba2'>Druga liczba:</label></td>");
 		out.println("<td><input name='liczba2' type='text'></td>");
 		out.println("</tr><tr>");
-		out.println("<td colspan='2'><button>Oblicz</button></td>");
+		out.println("<td>");
+		out.println("<select name='operacja'>");
+		out.println("<option value='+'>+</option>");
+		out.println("<option value='-'>-</option>");
+		out.println("<option value='*'>×</option>");
+		out.println("<option value='/'>÷</option>");
+		out.println("</select>");
+		out.println("</td>");
+		out.println("<td><button>Oblicz</button></td>");
 		out.println("</tr></table>");
 		out.println("</form>");
 		
-		if(parametr1 != null && parametr2 != null) {
+		if(parametr1 != null && parametr2 != null && operacja != null) {
 			try {
 				int liczba1 = Integer.parseInt(parametr1);
 				int liczba2 = Integer.parseInt(parametr2);
-				int wynik = liczba1 + liczba2;
-				out.println("<div>Wynik: <strong>" + wynik + "</strong></div>");
+				int wynik = switch(operacja) {
+					case "+" -> liczba1 + liczba2;
+					case "-" -> liczba1 - liczba2;
+					case "*" -> liczba1 * liczba2;
+					case "/" -> liczba1 / liczba2;
+					default -> 0;
+				};
+				out.printf("<div>%d %s %s = <strong>%d</strong></div>\n", liczba1, operacja, liczba2, wynik);
 			} catch (NumberFormatException e) {
 				out.println("<div>Niepoprawny format liczby</div>");
 			}
