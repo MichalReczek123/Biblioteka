@@ -30,7 +30,7 @@ public class Kalkulator extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<form>");
-		out.println("<table><tr>");		
+		out.println("<table><tr>");
 		out.println("<td><label for='liczba1'>Pierwsza liczba:</label></td>");
 		out.println("<td><input name='liczba1' type='number'></td>");
 		out.println("</tr><tr>");
