@@ -32,10 +32,10 @@ public class Kalkulator extends HttpServlet {
 		out.println("<form>");
 		out.println("<table><tr>");		
 		out.println("<td><label for='liczba1'>Pierwsza liczba:</label></td>");
-		out.println("<td><input name='liczba1' type='text'></td>");
+		out.println("<td><input name='liczba1' type='number'></td>");
 		out.println("</tr><tr>");
 		out.println("<td><label for='liczba2'>Druga liczba:</label></td>");
-		out.println("<td><input name='liczba2' type='text'></td>");
+		out.println("<td><input name='liczba2' type='number'></td>");
 		out.println("</tr><tr>");
 		out.println("<td>");
 		out.println("<select name='operacja'>");
