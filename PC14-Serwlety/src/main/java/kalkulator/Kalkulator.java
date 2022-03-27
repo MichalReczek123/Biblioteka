@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Kalkulator extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Odczytanie parametru przysłanego w zapytaniu, zawsze jako String.
 		// W przypadku braku parametru wynikime jest null.
@@ -29,7 +30,7 @@ public class Kalkulator extends HttpServlet {
 		out.println("<title>Kalkulator</title>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<form>");
+		out.println("<form method='post'>");
 		out.println("<table><tr>");
 		out.println("<td><label for='liczba1'>Pierwsza liczba:</label></td>");
 		out.println("<td><input name='liczba1' type='number'></td>");
@@ -68,6 +69,11 @@ public class Kalkulator extends HttpServlet {
 		
 		out.println("</body>");
 		out.println("</html>");
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }
