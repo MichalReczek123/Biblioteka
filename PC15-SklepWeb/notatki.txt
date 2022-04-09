@@ -1,0 +1,6 @@
+Możliwości JSP:
+- fragmenty kodu Java (scriptlet)
+- biblioteki tagów (taglib), w tym standardowa biblioteka tagów JSTL
+- możliwość odwoływania się do obiektów tworzonych w aplikacji, tzw. "beanów",
+  i używania Expression Language, czyli ${takich.znaczników}
+  

@@ -27,6 +27,7 @@ public class WypiszProdukty3 extends HttpServlet {
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<title>Sklep</title>");
+		out.println("<link rel='stylesheet' type='text/css' href='styl.css'>");
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<h1>Lista produktów</h1>");
