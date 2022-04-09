@@ -20,7 +20,7 @@ public class DodajDoKoszyka extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			int id = Integer.parseInt(request.getParameter("id"));
+			int id = Integer.parseInt(request.getParameter("productId"));
 			try(DBConnection db = DBConnection.open()) {
 				ProductDAO productDAO = db.productDAO();
 				Product product = productDAO.findById(id);

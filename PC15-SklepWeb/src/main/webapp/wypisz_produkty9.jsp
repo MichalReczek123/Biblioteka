@@ -46,8 +46,8 @@
         <h3>${product.productName}</h3>
         <div class="price">${product.price}</div>
         <p>${product.description}</p>
-        <p><a href="DodajDoKoszyka?id=${product.productId}">dodaj do koszyka</a></p>
-        <p><a href="EditProduct?id=${product.productId}">edytuj</a></p>
+        <p><a href="DodajDoKoszyka?productId=${product.productId}">dodaj do koszyka</a></p>
+        <p><a href="EditProduct?productId=${product.productId}">edytuj</a></p>
         </div>
 </c:forEach>
 

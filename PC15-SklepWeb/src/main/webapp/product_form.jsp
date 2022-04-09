@@ -41,8 +41,8 @@ ${errors}
 		</td>
 	</tr>
 	<tr>
-		<td><label for="price">Stawka VAT:</label></td>
-		<td><input name="price" placeholder="0.23" title="tu wpisz cenę" type="number" step="0.01" value="${product.vat}"/>
+		<td><label for="vat">Stawka VAT:</label></td>
+		<td><input name="vat" placeholder="0.23" title="tu wpisz cenę" type="number" step="0.01" value="${product.vat}"/>
 		</td>
 	</tr>
 	<tr>
