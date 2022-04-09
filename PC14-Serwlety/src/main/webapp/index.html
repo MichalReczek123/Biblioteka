@@ -2,14 +2,45 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Spis treści</title>
+<title>Aplikacja serwletowa</title>
+<link rel="stylesheet" type="text/css" href="styl.css">
 </head>
 <body>
 <h1>Spis treści</h1>
 <ul>
-<li><a href="HelloServlet">Hello Servlet (TXT)</a></li>
-<li><a href="hello.html">Hello (HTML)</a></li>
-<li><a href="Kalkulator">Kalkulator</a></li>
+<li><a href="Hello">Hello</a></li>
+<li><a href="KtoraGodzina">która godzina</a></li>
+<li><a href="Rozmowa">Rozmowa</a></li>
+<li><a href="przyklad.jsp">Przykład JSP</a></li>
 </ul>
+
+<h2>Kalkulator</h2>
+<ul>
+<li><a href="Kalkulator">wersja 0</a> - to zrobiliśmy na zajęciach naprawdę</li>
+<li><a href="Kalkulator1">wersja 1</a> - GET, tylko dodawanie</li>
+<li><a href="Kalkulator2">wersja 2</a> - GET, różne operacje</li>
+<li><a href="Kalkulator3">wersja 3</a> - POST</li>
+<li><a href="Kalkulator4">wersja 4</a> - refaktor</li>
+<li><a href="Kalkulator5">Kalkulator 5</a> - historia w zmiennej instancyjnej</li>
+<li><a href="Kalkulator6">Kalkulator 6</a> - historia w sesji (inicjalizacja if-em)</li>
+<li><a href="Kalkulator7">Kalkulator 7</a> - historia w sesji (inicjalizacja listenerem)</li>
+<li><a href="Kalkulator8">Kalkulator 8</a> - historia w sesji i kontekście aplikacji (inicjalizacja listenerem)</li>
+<li><a href="Kalkulator9">Kalkulator 9</a> - wersja z <code>forward</code> i widokiem JSP</li>
+<li><a href="dodaj.jsp">dodaj.jsp</a> - minimalna wersja w czystym JSP (tylko dodawanie)</li>
+<li><a href="kalkulator_tylko_jsp.jsp">kalkulator</a> - zrobiony w czystym JSP</li>
+<li><a href="kalkulator_bean.jsp">kalkulator bean</a> - wersja z pomocniczą klasą w Javie</li>
+</ul>
+
+<hr/>
+<h2>Sprawy techniczne</h2>
+<ul>
+<li><a href="Info">Info</a> - serwlet prezentujący zawartość <code>Request</code>, nagłówki, ciasteczka itp.</li>
+<li><a href="Async">Async</a> - serwlet obługujący zapytania asynchronicznie</li>
+<li><a href="Zakresy">Zakresy</a> - zakresy zmiennych w serwlecie</li>
+<li><a href="zakresy.jsp">zakresy.jsp</a> - zakresy zmiennych w JSP</li>
+<li><a href="zakresy_filtr.jsp">zakresy.jsp</a> - zakresy zmiennych w JSP - wersja z filtrem</li>
+</ul>
+
+
 </body>
 </html>
