@@ -55,7 +55,7 @@ ${errors}
 </table>
 </form>
 
-<p><a href="wypisz_produkty9.jsp">przejdź do listy produktów</a></p>
+<p><a href="produkty.jsp">przejdź do listy produktów</a></p>
 
 </body>
 </html>

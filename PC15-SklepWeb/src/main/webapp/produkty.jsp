@@ -44,7 +44,7 @@
 <c:forEach var="product" items="${bean.filteredProducts}">
     <div class="product">
     	<img class="photo" src="Photo?productId=${product.productId}" alt=""/>
-        <h3>${product.productName}</h3>
+        <h3>${product.productName} <span style="font-weight: normal">(${product.productId})</span></h3>
         <div class="price">${product.price}</div>
         <div class="price">VAT: ${product.vat}</div>
         <p>${product.description}</p>

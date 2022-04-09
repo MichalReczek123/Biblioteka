@@ -34,7 +34,7 @@ public class DodajDoKoszyka extends HttpServlet {
 			// ignorujemy ewentualne błędy
 		}
 		
-		response.sendRedirect("wypisz_produkty8.jsp");
+		response.sendRedirect("produkty.jsp");
 	}
 
 }
