@@ -20,18 +20,12 @@ public class DodajDoKoszyka extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			String parametrId = request.getParameter("id");
-			int id = Integer.parseInt(parametrId);
+			int id = Integer.parseInt(request.getParameter("id"));
 			try(DBConnection db = DBConnection.open()) {
 				ProductDAO productDAO = db.productDAO();
 				Product product = productDAO.findById(id);
-				
 				HttpSession sesja = request.getSession();
 				Koszyk koszyk = (Koszyk) sesja.getAttribute("koszyk");
-				if(koszyk == null) {
-					koszyk = new Koszyk();
-					sesja.setAttribute("koszyk", koszyk);
-				}
 				koszyk.addProduct(product);
 				// modyfikujemy obiekt, który już jest w sesji, nie musimy po zmianie ponownie robić setAttribute
 			}
