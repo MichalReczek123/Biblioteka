@@ -46,4 +46,3 @@ public class WypiszProdukty3 extends HttpServlet {
 		out.println("</html>");
 	}
 }
-

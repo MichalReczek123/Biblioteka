@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import sklep.db.CustomerDAO;
 import sklep.db.DBConnection;
 import sklep.db.DBException;
 import sklep.db.ProductDAO;
