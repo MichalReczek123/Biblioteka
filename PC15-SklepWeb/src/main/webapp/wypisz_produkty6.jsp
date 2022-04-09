@@ -12,7 +12,7 @@
 
 <h1>Lista produktów - wersja 6 JSP</h1>
 
-<jsp:useBean id="bean" class="sklep.beans.ProductBean"/>
+<jsp:useBean id="bean" class="sklep.beans.ProductBean" />
 
 <%-- Tutaj tak naprawdę wywołujemy metodę getAllProducts i w pętli przeglądamy elementy listy.
 	Każdy element to jest obiekt klasy Product i np. odczyt product.productNam

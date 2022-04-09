@@ -15,7 +15,7 @@ h2, h3, h4 {
 
 .product {
 	border: solid 2px blue;
-	margin: 1em auto;
+	margin: 1em auto 1em 50px;
 	padding: 1em;
 	background-color: #DDFFDD;
 	width: 800px;
