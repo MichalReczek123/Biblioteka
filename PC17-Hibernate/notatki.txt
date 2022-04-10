@@ -1,0 +1,15 @@
+1. Pobierz gdzieś na dysk sterownik bazy danych (postgresql-XXXX.jar)
+2. W Eclipse w zakładce Datasource Explorer zdefiniuj nowe połączenie z bazą danych
+	jako driver wskaż najpierw postgresql ten co jest,
+	a potem podmień sterownik na nowszy
+	a potem dopisz szczegóły połączenia
+nazwę bazy (u nas sklep) podaje się dwa razy: na końcu URLa i jeszcze osobno jako Database Name
+
+3. Załóż nowy projekt Mavenowy, do zależności dodaj elementy Hibernate'a
+
+4. W projekcie wejdź w Properties > Project Facets i włącz facet JPA.
+	Further Configuration → Library Configuration > Disable ,
+	Connection > wskazujemy połączenie
+
+5. New > JPA Entities From Tables
+...
