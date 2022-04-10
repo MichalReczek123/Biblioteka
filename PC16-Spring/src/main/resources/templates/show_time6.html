@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Time 6</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styl.css}" href="../static/styl.css">
+</head>
+<body>
+<h1>Data i czas</h1>
+
+<h3>Trzy sposoby wstawiania wartości atrybutu w Thymeleaf</h3>
+<ul>
+    <!-- th:text oraz data-th-text to są przykłady podejścia "natural template",
+        czyli że plik jest poprawnym składniowo dokumentem HTML, a dodatkowe magiczne atrybuty powodują specjalne działanie"
+        gdy ten plik jest przetwarzany przez "silnik thymeleaf".
+     -->
+    <!-- Najbardziej zalecane podejście: dodatkowa przestrzeń nazw th
+   		Aby to zadziałało, w HTMLu (najczęściej na samym początku) musi byś zadeklarowana przestrzeń nazw.
+    -->
+    <li th:text="${dt}">jakaś godzina 1</li>
+
+    <!-- atrybuty "data" wprowadzone w HTML 5
+    Normalnie takich atrybutów używają skrypty JS, aby w dokumencie zapamiętywać dane,
+    a tutaj Thymeleaf używa w innym celu.
+     -->
+    <li data-th-text="${dt}">jakaś godzina 2</li>
+
+    <!-- zagnieżdżone wyrażenia / inline expressions  - podejście podobne do JSP, tutaj mniej zalecane -->
+    <li>to jest wynik: [[${dt}]]</li>
+</ul>
+
+<h3>Odwołania do elementów zagnieżdżonych</h3>
+<ul>
+    <!-- tak naprawdę wywołanie dt.getYear() -->
+    <li>rok: <strong th:text="${dt.year}">1997</strong></li>
+    <li>dzień roku: <strong th:text="${dt.dayOfYear}">100</strong></li>
+    <li>dzień tygodnia: <strong th:text="${dt.dayOfWeek}">MONDAY</strong></li>
+    <li>sekunda: <strong th:text="${dt.second}"></strong></li>
+
+    <!-- Można też wywołać metodę, która coś odczyta, nawet jeśli nie nazywa się getXXX() -->
+    <li>data: <strong th:text="${dt.toLocalDate()}"></strong></li>
+    <li>czas: <strong th:text="${dt.toLocalTime()}"></strong></li>
+</ul>
+
+</body>
+</html>

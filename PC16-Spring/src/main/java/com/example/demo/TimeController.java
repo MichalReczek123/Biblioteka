@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -54,4 +55,26 @@ public class TimeController {
                 dt.format(FORMAT_DATY));
 	}
 	
+	// Gdy metoda w kontrolerze w wyniku zwraca String, a nie posiada adnotacji @ResponseBody,
+	// to Spring traktuje zwracaną wartość jak nazwę szablonu i (w zależności od wybranej technologii: JSP / Thymeleaf / FreeMarker)
+	// w odp. miejscu szuka pliku z szablonem i generuje wynik za pomocą tego szablonu.
+	
+	// Gdy do szablonu chcemy przekazać jakieś dane, to dodajemy je jako atrybuty do modelu.
+	// Najprościej zrobić to poprzez parametr model. Są też inne sposoby poprzez adnotacje, ale o tym później...
+	@RequestMapping("/time5")
+	public String time5(Model model) {
+		LocalDateTime obiekt = LocalDateTime.now();
+		model.addAttribute("dt", obiekt);
+		return "show_time5.html";
+	}
+	
+	@RequestMapping("/time6")
+	public String time6(Model model) {
+		LocalDateTime obiekt = LocalDateTime.now();
+		model.addAttribute("dt", obiekt);
+		return "show_time6.html";
+	}
+	
 }
+
+// Spring MVC - Model View Controller
