@@ -13,13 +13,13 @@ import org.springframework.stereotype.Component;
 // Wszystkie odwołania będą prowadzić do tego samego samego obiektu - o to chodzi w schemacie "singleton".
 // (chyba że użyjemy @Scope itp...)
 
-@Component
+// @Component
 public class GeneratorImpl implements Generator {
 	private long licznik = 0;
+	private Random random = new Random();
 
 	@Override
 	public List<Integer> generujListe(int zakres, int ile) {
-		Random random = new Random();
 		List<Integer> liczby = new LinkedList<>();
 		for (int i = 0; i < ile; i++) {
 			liczby.add(random.nextInt(zakres));
