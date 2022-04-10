@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styl.css}" href="../static/styl.css">
+</head>
+
+<body>
+<h1>Generator</h1>
+<form method="get">
+<label for="zakres">Zakres: </label>
+<input name="zakres" type="number" th:value="${param.zakres}"/>
+<br/>
+<label for="ile">Ile liczb: </label>
+<input name="ile" type="number" th:value="${param.ile}"/>
+<br/>
+<button>Pobierz</button>
+</form>
+
+<ul>
+	<li th:each="liczba : ${liczby}" th:text="${liczba}">111</li>
+</ul>
+
+</body>
+</html>
