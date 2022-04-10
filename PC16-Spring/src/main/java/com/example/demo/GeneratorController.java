@@ -13,12 +13,14 @@ public class GeneratorController {
 	
 	@RequestMapping("/generator")
 	public String generuj(Integer zakres, Integer ile, Model model) {
-		Random random = new Random();
-		List<Integer> liczby = new LinkedList<>();
-		for (int i = 0; i < ile; i++) {
-			liczby.add(random.nextInt(zakres));
+		if(zakres != null && ile != null) {
+			Random random = new Random();
+			List<Integer> liczby = new LinkedList<>();
+			for (int i = 0; i < ile; i++) {
+				liczby.add(random.nextInt(zakres));
+			}
+			model.addAttribute("liczby", liczby);
 		}
-		model.addAttribute("liczby", liczby);
 		return "generator.html";
 	}
 	
