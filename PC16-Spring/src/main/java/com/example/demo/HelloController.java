@@ -16,12 +16,6 @@ public class HelloController {
 		return "Hello world";
 	}
 	
-	@RequestMapping("/time")
-	@ResponseBody
-	public String time() {
-		return LocalDateTime.now().toString();
-	}
-	
 	// Najprostszy sposób, aby uzyskać parametr zapytania, to dopisać do metody
 	// parametr o takiej nazwie nazwie. Jest to parametr opcjonalny; gdy nie zostanie podany, Spring przekaże tu wartość null.
 	@RequestMapping("/witaj")
@@ -44,3 +38,12 @@ public class HelloController {
 	}
 
 }
+
+
+
+
+
+
+
+
+
