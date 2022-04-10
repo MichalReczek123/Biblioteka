@@ -14,9 +14,10 @@ import org.springframework.stereotype.Component;
 // (chyba że użyjemy @Scope itp...)
 
 @Component
-public class GeneratorImpl {
+public class GeneratorImpl implements Generator {
 	private long licznik = 0;
 
+	@Override
 	public List<Integer> generujListe(int zakres, int ile) {
 		Random random = new Random();
 		List<Integer> liczby = new LinkedList<>();
@@ -27,6 +28,7 @@ public class GeneratorImpl {
 		return liczby;
 	}
 	
+	@Override
 	public long stanLicznika() {
 		return licznik;
 	}
