@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styl.css}" href="../static/styl.css">
+</head>
+
+<body>
+<h1>Kalkulator</h1>
+<form method="post">
+<label for="liczba1">Liczba1: </label>
+<input name="liczba1" type="number" th:value="${param.liczba1}"/>
+<br/>
+<label for="liczba2">Liczba2: </label>
+<input name="liczba2" type="number" th:value="${param.liczba2}"/>
+<br/>
+<label for="operacja">Operacja: </label>
+<select name="operacja">
+<option value=""></option>
+<option value="+">+</option>
+<option value="-">-</option>
+<option value="*">×</option>
+<option value="/">÷</option>
+<option value="%">mod</option>
+</select>
+<br/>
+<button>Oblicz</button>
+</form>
+
+<!-- TODO wyświetl wynik -->
+<p>Wynik: <strong th:text="${wynik}">123</strong></p>
+
+</body>
+</html>
