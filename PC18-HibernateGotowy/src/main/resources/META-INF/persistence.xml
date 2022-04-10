@@ -10,7 +10,7 @@
 		<class>dto.PracownikWDepartamencie</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/hr"/>
-			<property name="javax.persistence.jdbc.user" value="hr"/>
+			<property name="javax.persistence.jdbc.user" value="kurs"/>
 			<property name="javax.persistence.jdbc.password" value="abc123"/>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 			<property name="hibernate.show_sql" value="true"/>
