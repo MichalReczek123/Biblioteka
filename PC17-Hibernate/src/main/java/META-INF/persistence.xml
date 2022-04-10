@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="PC17-Hibernate" transaction-type="RESOURCE_LOCAL">
+		<class>model.Customer</class>
+		<class>model.OrderProduct</class>
+		<class>model.OrderProductPK</class>
+		<class>model.Order</class>
+		<class>model.Product</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/sklep"/>
+			<property name="javax.persistence.jdbc.user" value="kurs"/>
+			<property name="javax.persistence.jdbc.password" value="abc123"/>
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+		</properties>
+	</persistence-unit>
+</persistence>
